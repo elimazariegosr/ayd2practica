@@ -1,0 +1,46 @@
+<br>
+<h5>Carnet: 20170946</h5>
+<hr>
+
+<div class="row" *ngIf="es_login == 1">
+    
+    <div class="col-sm-4"></div>
+    <div class="col-sm-3" style="background-color: rgb(218, 224, 189); text-align: center;">
+        <br>
+        <h5>User</h5>
+        <input type="text" id="txt_user" #user class="form-control" placeholder="user">
+        <h5>password</h5>
+        <input type="password" id="txt_pass" #pass class="form-control" placeholder="user">
+        <hr>
+        <input type="button" class="btn-warning" (click)="login(user.value, pass.value)" value="Ingresar">
+        <br>
+        <hr>
+        <input type="button" class="btn-info" (click)="es_registrar = 1; es_login = 0;" value="Necesitas una cuenta?">
+        <br>
+        <br>
+    </div>
+</div>
+<div class="row" *ngIf="es_registrar == 1">
+    
+    <div class="col-sm-4"></div>
+    <div class="col-sm-3" style="background-color: rgb(218, 224, 189); text-align: center;">
+        <br>
+        <h5>User</h5>
+        <input type="text" id="txt_user_r" #user_r class="form-control" placeholder="user">
+        <h5>Nombre</h5>
+        <input type="text" id="txt_nombre_r" #nombre_r class="form-control" placeholder="user">
+        <h5>password</h5>
+        <input type="password" id="txt_pass_r" #pass_r class="form-control" placeholder="user">
+        <hr>
+        <input type="button" class="btn-warning" (click)="registrar(user_r.value,nombre_r.value, pass_r.value)" value="Registrar">
+        <br>
+    </div>
+</div>
+  
+<div class="row" *ngIf="es_home == 1" style="text-align: center;">
+    
+    <h3>Bienvenido al centro de documentacion</h3>
+    <h4>Usuario: {{usuario}}</h4>
+</div>
+
+<h6 style="background-color: brown;">{{alerta}}</h6>
